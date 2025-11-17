@@ -137,7 +137,7 @@ uint16_t ACREL_DTSD1352::readHoldingRegister(uint16_t address) {
     
     if (result == _modbus.ku8MBSuccess) {
       // Giam lag
-      delay(5); 
+      delay(10); 
       return _modbus.getResponseBuffer(0);
     }
     
@@ -160,7 +160,7 @@ uint32_t ACREL_DTSD1352::readHoldingRegister32(uint16_t address) {
     uint32_t high = _modbus.getResponseBuffer(0);
     uint32_t low = _modbus.getResponseBuffer(1);
     // Giam lag
-    delay(5); 
+    delay(10); 
     return (high << 16) | low;
   }
   _lastError = result;
